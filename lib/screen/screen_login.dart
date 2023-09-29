@@ -33,11 +33,11 @@ class LoginScreen extends StatelessWidget {
                     height: width * 0.024,
                   ),
                   Text(
-                    "로그인하세요",
+                    "계속하려면 로그인하세요",
                     style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.surface),
+                        fontSize: 20,
+                        //fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.background),
                   ),
                   SizedBox(
                     height: width * 0.096,
@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                               color: Theme.of(context).colorScheme.background),
                           hintText: '이메일',
                           hintStyle: TextStyle(
-                            fontSize: 18,
+                            fontSize: 16,
                             color: Theme.of(context).colorScheme.background,
                           ),
                           border: OutlineInputBorder(
@@ -75,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                               color: Theme.of(context).colorScheme.background),
                           hintText: '비밀번호',
                           hintStyle: TextStyle(
-                            fontSize: 18,
+                            fontSize: 16,
                             color: Theme.of(context).colorScheme.background,
                           ),
                           border: OutlineInputBorder(
@@ -109,18 +109,20 @@ class LoginScreen extends StatelessWidget {
                       child: const Text(
                         '로그인',
                         style: TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.bold),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
-                  SizedBox(height: width * 0.024),
+                  SizedBox(height: width * 0.012),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
                         "아직 계정이 없으신가요?",
                         style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 16,
                             color: Theme.of(context).colorScheme.surface),
                       ),
                       TextButton(
@@ -135,7 +137,7 @@ class LoginScreen extends StatelessWidget {
                           "회원가입",
                           textAlign: TextAlign.end,
                           style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               //fontWeight: FontWeight.bold,
                               color: Theme.of(context).colorScheme.background),
                         ),

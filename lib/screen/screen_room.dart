@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:three_colors/model/model_user.dart';
+import 'package:three_colors/widget/google_map.dart';
 import 'package:three_colors/widget/user_button.dart';
+import 'package:intl/intl.dart';
 
 class RoomScreen extends StatefulWidget {
+  /*
+  String sex
+  int capacity
+  String dateTime
+  double lat, lng
+  bool ready
+  int deposit
+  */
   List<User> users;
   RoomScreen({super.key, required this.users});
 
@@ -16,6 +26,10 @@ class _RoomScreenState extends State<RoomScreen> {
     Size screenSize = MediaQuery.of(context).size;
     double width = screenSize.width;
     double height = screenSize.height;
+
+    DateTime dateTime = DateTime.parse("2023-06-10 00:12:00");
+    String date = DateFormat('MM.dd.yyyy').format(dateTime);
+    String time = DateFormat.jm().format(dateTime);
 
     return SafeArea(
       child: Scaffold(
@@ -36,6 +50,7 @@ class _RoomScreenState extends State<RoomScreen> {
                 Icon(
                   Icons.people_alt_outlined,
                   color: Theme.of(context).colorScheme.background,
+                  size: 32,
                 ),
                 Padding(
                   padding: EdgeInsets.all(width * 0.01),
@@ -44,7 +59,7 @@ class _RoomScreenState extends State<RoomScreen> {
                   "# / #",
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.background,
-                      fontSize: width * 0.04),
+                      fontSize: width * 0.05),
                 ),
                 Padding(
                   padding: EdgeInsets.all(width * 0.02),
@@ -79,6 +94,7 @@ class _RoomScreenState extends State<RoomScreen> {
               ),
               Container(
                 height: constraints.maxHeight * 0.4,
+                padding: EdgeInsets.all(width * 0.048),
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
@@ -86,8 +102,66 @@ class _RoomScreenState extends State<RoomScreen> {
                         width: 0.2),
                   ),
                 ),
+                child: Center(
+                    child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      date,
+                      style: TextStyle(
+                        fontSize: width * 0.12,
+                        //fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      time,
+                      style: TextStyle(
+                        fontSize: width * 0.15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                )),
               ),
-              Container(height: constraints.maxHeight * 0.375),
+              Container(
+                height: constraints.maxHeight * 0.375,
+                padding: EdgeInsets.all(width * 0.048),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: constraints.maxHeight * 0.050,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "restaurant",
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.background,
+                              fontSize: width * 0.05,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            softWrap: false,
+                          ),
+                          Text(
+                            "예약금: #",
+                            style: TextStyle(
+                                color: Theme.of(context).colorScheme.background,
+                                fontSize: width * 0.05),
+                            overflow: TextOverflow.ellipsis,
+                            softWrap: false,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: GoogleMap(
+                        lat: 37.240870,
+                        lng: 127.079744,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Container(
                 height: constraints.maxHeight * 0.1,
                 padding: EdgeInsets.fromLTRB(

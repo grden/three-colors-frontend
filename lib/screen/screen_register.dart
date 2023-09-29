@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:three_colors/screen/screen_home.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -35,11 +36,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "회원가입",
+                  "환영합니다!",
                   style: TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.secondary),
+                ),
+                SizedBox(
+                  height: width * 0.024,
+                ),
+                Text(
+                  "계속하려면 회원가입하세요",
+                  style: TextStyle(
+                      fontSize: 20,
+                      //fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.background),
                 ),
                 SizedBox(
                   height: width * 0.096,
@@ -54,7 +65,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             color: Theme.of(context).colorScheme.background),
                         hintText: '이메일',
                         hintStyle: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Theme.of(context).colorScheme.background,
                         ),
                         border: OutlineInputBorder(
@@ -78,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             color: Theme.of(context).colorScheme.background),
                         hintText: '비밀번호',
                         hintStyle: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Theme.of(context).colorScheme.background,
                         ),
                         border: OutlineInputBorder(
@@ -91,18 +102,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             .withOpacity(0.6)),
                   ),
                 ),
-                SizedBox(height: width * 0.096),
+                SizedBox(height: width * 0.048),
                 SizedBox(
                   width: constraints.maxWidth,
                   height: width * 0.12,
                   child: TextFormField(
-                    obscureText: true,
                     decoration: InputDecoration(
                         prefixIcon: Icon(Icons.person,
                             color: Theme.of(context).colorScheme.background),
                         hintText: '별명',
                         hintStyle: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Theme.of(context).colorScheme.background,
                         ),
                         border: OutlineInputBorder(
@@ -123,11 +133,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       width: constraints.maxWidth * 0.4,
                       height: width * 0.12,
                       child: TextField(
-                        obscureText: true,
                         decoration: InputDecoration(
                             hintText: '나이',
                             hintStyle: TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               color: Theme.of(context).colorScheme.background,
                             ),
                             border: OutlineInputBorder(
@@ -150,11 +159,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           return ChoiceChip(
                             label: SizedBox(
                                 width: constraints.maxWidth * 0.1,
-                                height: width * 0.12,
+                                height: width * 0.10,
                                 child: Center(child: Text(_sexList[index]))),
                             labelStyle: TextStyle(
                               color: Theme.of(context).colorScheme.background,
-                              fontSize: 18,
+                              fontSize: 16,
                             ),
                             selected: _selectedIndex == index,
                             onSelected: (bool selected) {
@@ -181,11 +190,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       backgroundColor: Theme.of(context).colorScheme.secondary,
                       elevation: 0,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()));
+                    },
                     child: const Text(
                       '가입하기',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),

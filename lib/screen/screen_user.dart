@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gradient_borders/gradient_borders.dart';
 import 'package:three_colors/model/model_user.dart';
+import 'package:three_colors/screen/screen_report.dart';
 
 class UserScreen extends StatefulWidget {
   User user;
@@ -104,7 +105,13 @@ class _UserScreenState extends State<UserScreen> {
                             ),
                             SizedBox(width: width * 0.012),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ReportScreen()));
+                              },
                               icon: const Icon(Icons.report_problem),
                               color: Colors.red.shade500,
                               splashRadius: 1,
