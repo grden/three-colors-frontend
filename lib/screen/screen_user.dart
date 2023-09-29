@@ -45,6 +45,13 @@ class _UserScreenState extends State<UserScreen> {
       bottom: false,
       child: Scaffold(
         appBar: AppBar(
+          title: Text(
+            '프로필',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Theme.of(context).colorScheme.background),
+          ),
           backgroundColor: Colors.white,
           elevation: 0,
           leading: BackButton(color: Theme.of(context).colorScheme.background),
@@ -110,7 +117,7 @@ class _UserScreenState extends State<UserScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const ReportScreen()));
+                                            ReportScreen(user: widget.user)));
                               },
                               icon: const Icon(Icons.report_problem),
                               color: Colors.red.shade500,
