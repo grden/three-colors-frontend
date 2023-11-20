@@ -179,7 +179,7 @@ class _RoomScreenState extends State<RoomScreen> {
                     child: const Text(
                       '준비 완료!',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

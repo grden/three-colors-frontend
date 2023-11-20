@@ -138,6 +138,7 @@ class _ReportScreenState extends State<ReportScreen> {
                       child: const Text(
                         '신고하기',
                         style: TextStyle(
+                          color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),

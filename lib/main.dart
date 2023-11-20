@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Three Colors App',
         theme: ThemeData(
+          scaffoldBackgroundColor: const Color(0xFFF6F6F6),
           colorScheme: ColorScheme.fromSwatch(
             backgroundColor: const Color(0xFF3C3C3C),
             cardColor: const Color(0xFFD9D9D9),
