@@ -1,7 +1,6 @@
 # three_colors
 
 Project for 2023 design thinking - front part using flutter.<br>
-Ongoing project - will continue committing.
 
 ## About
 
